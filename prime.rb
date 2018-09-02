@@ -3,7 +3,9 @@ def prime?(int)
 	if int < 0 #negative are primes if their postiive is prime
 		int *= -1
 	end
+
 	limit = int / 2 #only need to check up to first half of int {really sqrt(int) but cant use Math lib}
+	
 	if limit == 1 # covers 2 and 3 case
 		return true
 	end
@@ -11,6 +13,7 @@ def prime?(int)
 	if limit == 0 #covers 1, 0, -1 case
 		return false
 	end
+
 	primes_to_check = get_primes(limit)
 
 	primes_to_check.each do |prime|
@@ -50,5 +53,3 @@ def get_primes(limit)
 	end
 	primes
 end
-
-puts prime?(-1)
